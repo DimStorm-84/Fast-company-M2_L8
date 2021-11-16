@@ -8,6 +8,14 @@ const Posts = ({ match }) => {
     { id: 3, lable: "post 3" },
   ];
   const postId = match.params.postId;
-  return <>{postId ? <Post /> : <PostsList posts={posts} />}</>;
+  return (
+    <>
+      {postId ? (
+        <Post posts={posts} id={postId} />
+      ) : (
+        <PostsList posts={posts} />
+      )}
+    </>
+  );
 };
 export default Posts;
